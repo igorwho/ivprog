@@ -20,7 +20,7 @@ jobs:
     - name: Install Dependencies
       run: |
         npm install
-        npm update
+        npm install @babel/plugin-proposal-private-property-in-object --save-dev
 
     - name: Run ESLint
       run: npm run lint
