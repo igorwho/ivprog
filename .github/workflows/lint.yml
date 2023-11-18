@@ -2,8 +2,7 @@ name: Lint
 
 on:
   pull_request:
-    branches:
-      - main
+    types: [opened, synchronize, reopened]
 
 jobs:
   lint:
@@ -19,7 +18,9 @@ jobs:
         node-version: 14
 
     - name: Install Dependencies
-      run: npm install
+      run: |
+        npm install
+        npm install @babel/plugin-proposal-private-property-in-object --save-dev
 
     - name: Run ESLint
       run: npm run lint
