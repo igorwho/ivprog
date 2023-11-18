@@ -18,7 +18,9 @@ jobs:
         node-version: 14
 
     - name: Install Dependencies
-      run: npm install
+      run:  |
+        npm install
+        npm install @babel/plugin-proposal-private-property-in-object --save-dev
 
     - name: Run Unit Tests
       run: npm test
